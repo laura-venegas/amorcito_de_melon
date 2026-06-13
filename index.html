@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>12 Razones Por Las Que Te Amo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:
+radial-gradient(circle at top,#102d6b,#06152f 70%);
+overflow-x:hidden;
+font-family:'Courier New',monospace;
+}
+
+/* HEADER */
+
+.fixed-header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:999;
+text-align:center;
+padding:10px 0;
+background:
+linear-gradient(
+to bottom,
+#06152f 90%,
+transparent
+);
+}
+
+.top{
+width:min(1000px,95vw);
+margin:auto;
+display:flex;
+justify-content:space-between;
+color:white;
+font-size:12px;
+letter-spacing:2px;
+}
+
+.date{
+display:inline-block;
+margin-top:10px;
+padding:8px 20px;
+border:2px solid #d4aa53;
+border-radius:30px;
+color:#f6c86c;
+}
+
+.title{
+line-height:.8;
+color:white;
+}
+
+.n12{
+font-size:120px;
+font-family:"Cormorant Garamond";
+}
+
+.razones{
+font-size:70px;
+color:#d4aa53;
+font-style:italic;
+}
+
+.small{
+font-size:40px;
+}
+
+.teamo{
+font-family:"Great Vibes";
+font-size:120px;
+color:#d4aa53;
+}
+
+/* IMPRESORA */
+
+.printer{
+width:min(700px,90vw);
+height:72px;
+margin:15px auto;
+background:
+linear-gradient(#f4f4f4,#cfcfcf);
+border-radius:15px;
+position:relative;
+box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.slot{
+position:absolute;
+left:35px;
+right:35px;
+top:28px;
+height:15px;
+background:#333;
+border-radius:20px;
+}
+
+/* RECIBO */
+
+.wrapper{
+padding-top:360px;
+}
+
+.receipt{
+width:min(430px,92vw);
+margin:auto;
+background:#e9f4f9;
+color:#15294a;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+position:relative;
+}
+
+.receipt::before,
+.receipt::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+height:18px;
+
+background:
+radial-gradient(
+circle at 9px 9px,
+transparent 0 6px,
+#e9f4f9 6px
+);
+
+background-size:18px 18px;
+}
+
+.receipt::before{
+top:-9px;
+}
+
+.receipt::after{
+bottom:-9px;
+}
+
+/* TICKET */
+
+.ticket{
+
+min-height:95vh;
+
+padding:40px 30px;
+
+position:relative;
+
+border-bottom:
+2px dashed #6d7d98;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.ticket::before,
+.ticket::after{
+content:"";
+position:absolute;
+top:0;
+bottom:0;
+width:14px;
+
+background:
+radial-gradient(
+circle,
+#193050 4px,
+transparent 5px
+) center/14px 26px repeat-y;
+}
+
+.ticket::before{
+left:-7px;
+}
+
+.ticket::after{
+right:-7px;
+}
+
+.big-number{
+
+position:absolute;
+
+right:10px;
+top:140px;
+
+font-size:160px;
+font-weight:bold;
+
+color:rgba(0,60,120,.08);
+}
+
+.receipt-title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+.receipt-number{
+text-align:center;
+margin-bottom:20px;
+color:#56657d;
+}
+
+.meta{
+font-size:12px;
+line-height:1.7;
+}
+
+.separator{
+border-bottom:2px dashed #444;
+margin:15px 0 25px;
+}
+
+/* BADGE */
+
+.badge{
+
+align-self:center;
+
+background:
+linear-gradient(
+135deg,
+#ffd874,
+#d39b3c
+);
+
+padding:10px 18px;
+
+font-weight:bold;
+
+border-radius:4px;
+
+box-shadow:
+0 4px 10px rgba(0,0,0,.15);
+}
+
+.reason{
+
+text-align:center;
+
+margin-top:25px;
+
+font-size:18px;
+
+line-height:1.4;
+}
+
+/* CUPON */
+
+.coupon-ticket{
+
+width:240px;
+height:90px;
+
+margin:30px auto;
+
+display:flex;
+
+background:#0f2d66;
+
+color:white;
+
+border-radius:4px;
+
+overflow:hidden;
+
+box-shadow:
+0 6px 15px rgba(0,0,0,.25);
+}
+
+.coupon-side{
+
+width:35px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+writing-mode:vertical-rl;
+
+transform:rotate(180deg);
+
+font-size:11px;
+
+letter-spacing:2px;
+
+border-left:1px dashed rgba(255,255,255,.3);
+border-right:1px dashed rgba(255,255,255,.3);
+}
+
+.coupon-content{
+
+flex:1;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+font-size:11px;
+}
+
+.coupon-content strong{
+font-size:18px;
+margin-top:5px;
+}
+
+/* FOOTER */
+
+.footer{
+font-size:11px;
+line-height:1.5;
+margin-top:20px;
+}
+
+.spotify-wrapper{
+
+margin-top:20px;
+
+display:flex;
+justify-content:center;
+}
+
+.spotify-wrapper img{
+
+width:260px;
+max-width:100%;
+
+background:white;
+
+padding:10px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+}
+
+</style>
+</head>
+<body>
+
+<div class="fixed-header">
+
+<div class="top">
+<div>UN REGALO PARA: Haru Ameyali</div>
+<div>CON AMOR DE: Laura Venegas</div>
+</div>
+
+<div class="date">21.11.2025</div>
+
+<div class="title">
+<span class="n12">12</span>
+<span class="razones">Razones</span>
+
+<div class="small">
+por las que
+</div>
+
+<div class="teamo">
+Te Amo
+</div>
+</div>
+
+<div class="printer">
+<div class="slot"></div>
+</div>
+
+</div>
+
+<div class="wrapper">
+
+<div class="receipt" id="receipt"></div>
+
+</div>
+
+<script>
+
+const razones = [
+
+"Porque me enseñaste que las cosas más importantes de la vida no pueden medirse, calcularse ni explicarse; simplemente se sienten.",
+"Porque transformaste mi manera de ver el mundo y convertiste mis días comunes en recuerdos que quiero conservar para siempre.",
+"Porque contigo encontré una paz que ninguna fórmula, teoría o respuesta lógica podría explicar.",
+"Porque tu risa tiene la capacidad de iluminar incluso los días más difíciles y recordarme que la felicidad existe.",
+"Porque eres el hogar al que siempre quiero regresar, sin importar dónde esté ni cuánto tiempo haya pasado.",
+"Porque me has dado confianza cuando dudaba de mí misma y me has ayudado a ver fortalezas que no sabía que tenía..",
+"Porque me enseñaste que amar no es esconderse ni tener miedo, sino caminar de la mano con orgullo.",
+"Porque me acompañas tanto en los momentos felices como en los difíciles, haciéndome sentir que nunca tengo que enfrentar nada sola.",
+"Porque cambiaste para siempre la forma en que entiendo el amor, demostrando que puede ser inmenso.",
+"Porque si la Verdad me preguntara qué fue lo más valioso que encontré en mi vida, siempre respondería tu nombre.",
+"Porque, al igual que los Elric, aprendí que siempre vale la pena seguir avanzando por aquello que amas, y yo siempre elegiré avanzar hacia ti.",
+"Porque si la alquimia busca transformar una cosa en otra, tú lograste la transformación más hermosa de todas: convertiste mis miedos en esperanza, mis dudas en confianza y mis días ordinarios en algo extraordinario."
+
+];
+const vales = [
+
+"UN MOMENTO QUE NO NECESITA EXPLICACIÓN",
+
+"UNA PÁGINA MÁS DE NUESTRA HISTORIA",
+
+"UN REFUGIO DEL MUNDO",
+
+"100 RISAS GARANTIZADAS",
+
+"UN VIAJE DE REGRESO A CASA",
+
+"VERTE CON MIS OJOS",
+
+"CAMINAR CON ORGULLO A TU LADO",
+
+"NO ENFRENTAR NADA SOLA",
+
+"AMOR SIN MEDIDA",
+
+"MÁS VALIOSO QUE LA VERDAD",
+
+"SEGUIR AVANZANDO JUNTAS",
+
+"ALQUIMIA DEL CORAZÓN"
+
+];
+
+const images = [
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+    "https://assetsio.gnwcdn.com/Trigun-Vash.webp?width=690&quality=85&format=jpg&auto=webp",
+]
+const receipt =
+document.getElementById("receipt");
+
+receipt.innerHTML =
+razones.map((texto,index)=>`
+
+<section class="ticket">
+
+<div class="big-number">
+${String(index+1).padStart(2,"0")}
+</div>
+
+<div class="receipt-title">
+RECIBO DE AMOR
+</div>
+
+<div class="receipt-number">
+N.º ${String(index+1).padStart(2,"0")} de 12
+</div>
+
+<div class="meta">
+FECHA DE EMISIÓN: 10/06/2026<br>
+RECOLECTADO PARA: HARU
+</div>
+
+<div class="separator"></div>
+
+<div class="badge">
+RAZÓN #${index+1}
+</div>
+
+<div class="reason">
+${texto}
+</div>
+
+<div class="coupon-ticket">
+
+<div class="coupon-side">
+LOVERS
+</div>
+
+<div class="coupon-content">
+
+<div>
+VALE POR
+</div>
+
+<strong>
+${vales[index]}
+</strong>
+
+</div>
+
+<div class="coupon-side">
+LOVERS
+</div>
+
+</div>
+
+<div class="footer">
+
+🧾 RECIBO OFICIAL DE AMOR
+
+<br><br>
+
+EMITIDO POR: ......... LAURA VENEGAS<br>
+FOLIO: ............... #${String(index+1).padStart(2,"0")}
+
+<br><br>
+
+ARTÍCULO ADQUIRIDO:<br>
+❤️ UNA RAZÓN MÁS PARA AMARTE
+
+<br><br>
+
+CANTIDAD: ............ INFINITA<br>
+PRECIO: .............. INVALUABLE<br>
+TOTAL: ............... TODA MI VIDA
+
+<br><br>
+
+ESTE DOCUMENTO CERTIFICA QUE
+ERES EL AMOR DE MI VIDA.
+
+<br><br>
+
+VÁLIDO HASTA:<br>
+EL FIN DEL UNIVERSO ✨
+
+<br><br>
+
+FIRMADO CON AMOR,<br>
+LAURA ❤️
+
+</div>
+
+<div class="spotify-wrapper">
+
+<img
+src="${images[index]}"
+alt="Imagen"
+with:"600">
+
+</div>
+
+</section>
+
+`).join("");
+
+</script>
+
+</body>
+</html>
